@@ -10,7 +10,8 @@ A seção "Internet" é a primeira seção do roadmap e é dividida em 6 partes:
 - O que é domínio?
 - O que é hospedagem?
 
-Estas 6 partes serão abordadas dentro de sua respectiva pasta, com um arquivo `readme.md` para cada uma delas.
+Estas 6 partes serão abordadas dentro de sua respectiva pasta, com um arquivo `readme.md` para cada uma delas.  
+***
 
 **EN-US**  
 The "Internet" section is the first section of the roadmap and is divided into 6 parts:
