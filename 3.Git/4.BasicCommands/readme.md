@@ -147,7 +147,10 @@ git clean -f
 # Remove da área de stage / Removes from the staging area
 git rm --cached file.txt
 
-# Remove da area de stage e descarta as alterações / Removes from the staging area and discards changes
+# Remove tudo da área de stage / Removes everything from the staging area
+git reset
+
+# Remove tudo da area de stage e descarta as alterações / Removes everything from the staging area and discards changes
 git reset --hard
 ```
 
