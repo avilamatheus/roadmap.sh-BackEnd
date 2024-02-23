@@ -24,7 +24,7 @@ git init
 git status
 ```
 
-##  Adicionando arquivos à área de stage / Add files to the staging area
+## Adicionando arquivos à área de stage / Add files to the staging area
 ```bash
 #Adiciona um arquivo específico / Adds a specific file
 git add file.txt
@@ -35,13 +35,9 @@ git add -A
 git add --all
 ```
 
-## Removendo arquivos da área de stage / Removing files from the staging area
+## Fazendo o git parar de rastrear um arquivo / Making git stop tracking a file
 ```bash
-# Remove um arquivo específico / Removes a specific file
 git rm --cached file.txt
-
-# Remove todos os arquivos / Removes all files
-git rm --cached -r .
 ```
 
 ## Commitando arquivos / Committing files
@@ -141,11 +137,10 @@ git checkout .
 git clean -f
 ```
 
-## Removendo da área de stage / Removing from the staging area
+## Removendo arquivos da área de stage / Removing files from the staging area
 ```bash
-
-# Remove da área de stage / Removes from the staging area
-git rm --cached file.txt
+# Remove um arquivo específico / Removes a specific file
+git reset <file>
 
 # Remove tudo da área de stage / Removes everything from the staging area
 git reset
