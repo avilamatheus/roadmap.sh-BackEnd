@@ -47,13 +47,14 @@ git commit -m "Commit message"
 
 ## Visualizando alterações / Viewing changes
 ```bash
-# Somente se o arquivo não estiver na área de stage
-# Only if the file is not in the staging area
+# Visualiza diferenças entre o workspace e a área de stage
 git diff
 
-# Se o arquivo estiver na área de stage
-# If the file is in the staging area
+# Visualiza diferenças entre a área de stage e o último commit
 git diff --staged
+
+# Visualiza diferenças entre o workspace e o último commit
+git diff HEAD
 ```
 
 ## Histórico de commits / Commit history
@@ -124,17 +125,41 @@ git checkout master
 ```
 
 ## Desfazendo alterações / Undoing changes
-```bash
-# Observação: isso serve para arquivos que não estão na área de stage / Note: this is for files that are not in the staging area
+**PT-BR**  
+Se um arquivo não estiver na staging area (ou seja, não foi adicionado com git add), mas foi modificado no diretório de trabalho, o comando `git checkout` desfaz as alterações desse arquivo (desde que o mesmo esteja rastreado).
 
-# Desfaz as alterações no arquivo / Undoes changes in the file
+Se um arquivo estiver na staging area e foi modificado no diretório de trabalho, o comando `git checkout` desfaz as alterações desse arquivo no diretório de trabalho e substitui pela versão que está na staging area, restaurando-o para o estado em que estava quando foi adicionado à staging area.
+
+**EN-US**  
+If a file is not in the staging area (i.e. it was not added with git add), but was modified in the working directory, the `git checkout` command undoes the changes to that file (as long as it is tracked).
+
+If a file is in the staging area and was modified in the working directory, the `git checkout` command undoes the changes to that file in the working directory and replaces it with the version that is in the staging area, restoring it to the state it was in when it was added to the staging area.
+***
+
+```bash
+# Desfaz as alterações em um arquivo especifico.
+# Undoes changes in a specific file
 git checkout file.txt
 
-# Desfaz alterações em tudo / Undoes changes in everything
+# Desfaz alterações em tudo.
+# Undoes changes in everything
 git checkout .
 
-# Remove arquivos não rastreados / Removes untracked files
+# Remove arquivos não rastreados
+# Removes untracked files
 git clean -f
+
+# Desfaz alterações em tudo, 
+# inclusive em arquivos na área de stage,
+# menos novos 
+# arquivos em stage.
+# Porém, para funcionar, é necessário que o repo tenha ao menos um commit.
+
+# Undoes changes in everything,
+# including files in the staging area,
+# except new files in the staging area.
+# However, to work, the repo must have at least one commit.
+git checkout HEAD .
 ```
 
 ## Removendo arquivos da área de stage / Removing files from the staging area
@@ -145,7 +170,8 @@ git reset <file>
 # Remove tudo da área de stage / Removes everything from the staging area
 git reset
 
-# Remove tudo da area de stage e descarta as alterações / Removes everything from the staging area and discards changes
+# Remove tudo da area de stage e descarta todas as alterações rastreadas, incluindo novos arquivos em stage.
+# Removes everything from the staging area and discards all tracked changes, including new files in the staging area.
 git reset --hard
 ```
 
@@ -186,4 +212,3 @@ git clone /path/to/repo /path/to/newrepo
 
 # clonando de um repositório remoto / cloning from a remote repository
 git clone git@github.com:DevMasterTeam/Udemy-Git.git
-
