@@ -26,6 +26,12 @@ When a branch is included in the main project, it is merged with the main projec
 git branch
 #or
 git branch --list
+
+# Lista todas as branchs, inclusive as do repositório remoto
+# Lists all branches, including those from the remote repository
+git branch -a 
+#or
+git branch --all
 ```
 
 ### Criar uma branch / Create a branch
@@ -48,6 +54,11 @@ git push -u origin <branch_name>
 ### Removendo branchs locais / Removing local branches
 ```bash
 git branch -d <branch_name>
+
+# Força a remoção da branch, mesmo que haja commits não mesclados
+# Forces the removal of the branch, even if there are unmerged commits
+git branch -D <branch_name>
+
 ```
 
 ### Removendo branchs remotas / Removing remote branches
